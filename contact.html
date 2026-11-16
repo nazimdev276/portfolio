@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | RedEye – Web Developer</title>
+  <meta name="description" content="Portfolio of RedEye, a web developer building simple, accessible websites.">
+  <meta name="author" content="RedEye">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/index.html">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Contact | RedEye – Web Developer">
+  <meta property="og:description" content="Contact for RedEye">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/contact.html">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1>RedEye</h1>
+    <p>Web developer in training</p>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="contact">
+      <h2>Get in touch</h2>
+      <form action="#" method="post"><!--TODO add action-->
+        <p>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 RedEye</p>
+  </footer>
+
+</body>
+
+</html>
