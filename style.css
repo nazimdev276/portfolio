@@ -1,0 +1,269 @@
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Design tokens ---------- */
+:root {
+  /*Cloors*/
+  --color-bg: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-text: #1f2933;
+  --color-muted: #52606d;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-header: #1e3a8a;
+  --color-border: #d9e2ec;
+  /* Typography */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+
+  /* Spacing */
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+
+  /* Other */
+  --radius: 8px;
+  --max-width: 70rem;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  /*sticky footer and centered content*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+p+p {
+  margin-top: var(--space-m);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+.page-content {
+  flex: 1;
+  /*pushes the footer down*/
+  width: 100%;
+  max-width: var(--max-width);
+  /*centers the content*/
+  margin-inline: auto;
+  padding: var(--space-l) var(--space-m);
+}
+
+.page-content>section+section {
+  margin-top: var(--space-xl);
+}
+
+.site-header {
+  background-color: var(--color-bg);
+  color: #ffffff;
+  padding: var(--space-m);
+}
+
+.site-header h1 {
+  font-size: 1.75rem;
+  color: var(--color-header);
+}
+
+.site-header p {
+  color: var(--color-text);
+}
+
+.main-nav {
+  margin-top: var(--space-m);
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s) var(--space-m);
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: var(--space-s) 0;
+  color: var(--color-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  border-bottom-color: var(--color-muted);
+}
+
+.main-nav a[aria-current="page"] {
+  font-weight: 700;
+  border-bottom-color: var(--color-muted);
+}
+
+.project {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-m);
+}
+
+.project-list>h2 {
+  grid-column: 1/-1;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: var(--space-s);
+  font-weight: 600;
+}
+
+.contact {
+  max-width: 36rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-l);
+}
+
+.contact form p+p {
+  margin-top: var(--space-m);
+}
+
+.contact label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: 3px solid #93b4fb;
+  border-color: var(--color-primary);
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  color: #ffffff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.site-footer {
+  background-color: var(--color-header);
+  color: #dbe4ff;
+  text-align: center;
+  padding: var(--space-m);
+}
+
+/*tablets and up*/
+@media (min-width: 48em) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .site-header {
+    padding: var(--space-l);
+  }
+
+  .site-header .main-nav {
+    margin-top: var(--space-l);
+  }
+
+  .page-content {
+    padding: var(--space-xl) var(--space-l);
+  }
+}
+
+/*desctop*/
+@media (min-width: 64em) {
+  .page-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-l);
+    align-items: start;
+  }
+}
+
+/* Smooth hover transitions */
+a,
+button,
+.project {
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
